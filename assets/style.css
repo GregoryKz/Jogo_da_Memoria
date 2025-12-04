@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(135deg, #f2e9d8, #ffeedd); /* tom pastel aconchegante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #5a4636;
+    font-weight: 600;
+}
+
+.game-container {
+    text-align: center;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 12px;
+    justify-content: center;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #fff7eb;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(120, 90, 50, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(100, 75, 40, 0.25);
+}
+
+.card.flipped {
+    background-color: #fff;
+    transform: scale(1.02) rotateY(180deg);
+}
+
+.card.matched {
+    background-color: #d6f5d6;
+    color: #3c763d;
+    transform: scale(1.05);
+    cursor: default;
+    box-shadow: 0 0 10px rgba(80, 140, 90, 0.4);
+}
+
+@media (max-width: 500px) {
+    .game-board {
+        grid-template-columns: repeat(4, 70px);
+        gap: 10px;
+    }
+
+    .card {
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
+    }
+}
